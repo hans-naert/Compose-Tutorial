@@ -1,6 +1,7 @@
 package com.example.composetutorial
 
 import android.os.Bundle
+import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,7 +17,18 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Text("Hello World")
+            MessageCard("Android")
         }
+    }
+
+    @Composable
+    fun MessageCard(name: String) {
+        Text(text = "Hello $name!")
+    }
+
+    @Preview
+    @Composable
+    fun PreviewMessageCard() {
+        MessageCard("Android")
     }
 }
